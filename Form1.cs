@@ -49,15 +49,23 @@ namespace Assign5
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int parallelIndex = comboBox1.SelectedIndex;
-            int total = 0;
+            double total = 0;
             double callMin = Convert.ToDouble(minTime[parallelIndex]);
             double callRate = Convert.ToDouble(rate[parallelIndex]);
+            double length = callMin;
 
             minBox.Text = Convert.ToString(callMin);
 
             rateBox.Text = Convert.ToString(callRate);
 
-            total = 
+            if (lengthBox.Text != "")
+            {
+                length = Convert.ToDouble(lengthBox.Text);
+            }
+
+            total = (length * callRate);
+            
+            totalBox.Text = total.ToString("C");
         }
     }
 }
