@@ -33,7 +33,10 @@ namespace Assign5
 
           
             //load comboBox with the area codes
-            //use the method comboBox1.Items.Add("403");
+            for (int i = 0; i < areaCode.Length; i++)
+            {
+                comboBox1.Items.Add(areaCode[i]);
+            }
            
 
 
@@ -45,7 +48,16 @@ namespace Assign5
         // comboBox was changed - calculate the charges for the phone call
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int parallelIndex = comboBox1.SelectedIndex;
+            int total = 0;
+            double callMin = Convert.ToDouble(minTime[parallelIndex]);
+            double callRate = Convert.ToDouble(rate[parallelIndex]);
 
+            minBox.Text = Convert.ToString(callMin);
+
+            rateBox.Text = Convert.ToString(callRate);
+
+            total = 
         }
     }
 }
